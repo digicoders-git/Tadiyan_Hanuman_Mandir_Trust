@@ -10,6 +10,7 @@ import Donation from './pages/Donation'
 import { initPlugins } from './utils/initPlugins'
 
 import Intro from './pages/Intro'
+import ScrollToTop from './ScrollToTop'
 
 // Global audio instance
 let globalAudio = null;
@@ -52,7 +53,9 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <Routes>
+    <>  
+    <ScrollToTop />
+      <Routes>
         <Route path="/" element={<Intro />} />
         
         <Route path="/home" element={<Layout><Home /></Layout>} />
@@ -70,6 +73,8 @@ function App() {
         
         <Route path="/donation" element={<Layout><Donation /></Layout>} />
     </Routes>
+    </>
+
   )
 }
 
