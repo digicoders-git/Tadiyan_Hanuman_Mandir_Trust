@@ -633,6 +633,10 @@ const Home = () => {
                     border: 1px solid rgba(255,255,255,0.2);
                     transition: all 0.3s ease;
                     height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
                 }
                 
                 .footer-card:hover {
@@ -983,7 +987,7 @@ const Home = () => {
                 </div>
                 <h4 className="footer-title">दान</h4>
                 <div className="footer-content">
-                  <p>आपके दान से मंदिर की सेवा और विकास में मदद मिलती है।</p>
+                  <p style={{textAlign: 'center'}}>आपके दान से मंदिर की सेवा और विकास में मदद मिलती है।</p>
                 </div>
               </div>
             </div>

@@ -11,6 +11,9 @@ import { initPlugins } from './utils/initPlugins'
 
 import Intro from './pages/Intro'
 
+// Global audio instance
+let globalAudio = null;
+
 function App() {
   const location = useLocation();
 
@@ -21,6 +24,32 @@ function App() {
     }, 100);
     return () => clearTimeout(timer);
   }, [location]);
+
+  useEffect(() => {
+    // Only start audio when not on intro page and audio not already created
+    if (location.pathname !== '/' && !globalAudio) {
+      globalAudio = new Audio('/hanumanChalisa.mp3');
+      globalAudio.loop = true;
+      globalAudio.volume = 0.5;
+      
+      const playAudio = () => {
+        globalAudio.play().catch(e => console.log('Audio autoplay blocked:', e));
+      };
+      
+      // Try to play immediately
+      playAudio();
+      
+      // Also try on first user interaction
+      const handleFirstInteraction = () => {
+        playAudio();
+        document.removeEventListener('click', handleFirstInteraction);
+        document.removeEventListener('touchstart', handleFirstInteraction);
+      };
+      
+      document.addEventListener('click', handleFirstInteraction);
+      document.addEventListener('touchstart', handleFirstInteraction);
+    }
+  }, [location.pathname]);
 
   return (
     <Routes>

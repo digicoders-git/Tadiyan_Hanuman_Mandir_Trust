@@ -56,7 +56,7 @@ const Header = () => {
                         </li>
                         <li className="mobile-menu-item">
                             <Link to="/donation" className="mobile-donate-btn" onClick={toggleMenu}>
-                                Donation
+                                अभी दान करें
                             </Link>
                         </li>
                     </ul>
@@ -423,6 +423,7 @@ const Header = () => {
                     .header-container {
                         padding: 0 15px;
                         height: 70px;
+                        position: relative;
                     }
                     
                     .header-logo img {
@@ -430,22 +431,29 @@ const Header = () => {
                     }
                     
                     .donate-btn {
-                        padding: 10px 16px;
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: 8px 16px;
                         font-size: 12px;
                     }
                 }
 
                 @media (max-width: 480px) {
-                    .donate-btn span {
-                        display: none;
+                    .donate-btn {
+                        position: absolute;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        padding: 8px 16px;
+                        font-size: 12px;
+                        border-radius: 20px;
+                        width: auto;
+                        height: auto;
+                        justify-content: center;
                     }
                     
-                    .donate-btn {
-                        padding: 10px;
-                        border-radius: 50%;
-                        width: 40px;
-                        height: 40px;
-                        justify-content: center;
+                    .donate-btn span {
+                        display: inline;
                     }
                 }
             `}</style>
