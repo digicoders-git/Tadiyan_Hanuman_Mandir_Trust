@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from "react";
 
 const Footer = () => {
-    return (
-        <>
-            <style>
-                {`
+  return (
+    <>
+      <style>
+        {`
                     .modern-footer {
                         background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
                         padding: 40px 0 20px;
@@ -94,35 +94,54 @@ const Footer = () => {
                         }
                     }
                 `}
-            </style>
-            <footer className="modern-footer">
-                <div className="container-fluid">
-                    <div className="footer-content">
-                        <div className="footer-copyright">
-                            <p> Copyright © TADIYAN HANUMAN MANDIR - <a href="#">2025</a> | Design and Developed by <a target='_blank' href="https://digicoders.in">#TeamDigiCoders</a> </p>
-                        </div>
-                        <ul className="modern-social-links">
-                            <li>
-                                <a target='_blank' href="https://www.facebook.com/tadiyanhanuman.mandir/" className="social-link">
-                                    <i className="fab fa-facebook-f"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a target='_blank' href="https://www.instagram.com/tadiyanhanumanmandirtrust.in/?hl=en" className="social-link">
-                                    <i className="fab fa-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a target='_blank' href="https://www.youtube.com/@TadiyanHanumanMandirTrust" className="social-link">
-                                    <i className="fab fa-youtube"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </footer>
-        </>
-    );
+      </style>
+      <footer className="modern-footer">
+        <div className="container-fluid">
+          <div className="footer-content">
+            <div className="footer-copyright">
+              <p>
+                {" "}
+                Copyright © TADIYAN HANUMAN MANDIR - <a href="#">2025</a> |
+                Design and Developed by{" "}
+                <a target="_blank" href="https://digicoders.in">
+                  #TeamDigiCoders
+                </a>{" "}
+              </p>
+            </div>
+            <ul className="modern-social-links">
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.facebook.com/tadiyanhanuman.mandir/"
+                  className="social-link"
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.instagram.com/tadiyanhanumanmandirtrust.in/?hl=en"
+                  className="social-link"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+              </li>
+              <li>
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/@TadiyanHanumanMandirTrust"
+                  className="social-link"
+                >
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
 };
 
-export default Footer;
+export default memo(Footer);

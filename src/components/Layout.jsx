@@ -1,22 +1,15 @@
-import React, { useEffect } from 'react';
-import Header from './Header';
-import Footer from './Footer';
-import { useLocation } from 'react-router-dom';
+import React, { memo } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const Layout = ({ children }) => {
-    const location = useLocation();
-
-    useEffect(() => {
-        window.scrollTo(0, 0);
-    }, [location]);
-
-    return (
-        <>
-            <Header />
-            {children}
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      {children}
+      <Footer />
+    </>
+  );
 };
 
-export default Layout;
+export default memo(Layout);

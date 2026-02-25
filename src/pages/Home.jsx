@@ -1,10 +1,34 @@
-import React from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
+import React, { memo } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+// Static data defined outside component to prevent recreation on each render
+const TEAM_ROLES = [
+  "उपाध्यक्ष",
+  "सचिव",
+  "कोषाध्यक्ष",
+  "संरक्षक",
+  "सलाहकार",
+  "सदस्य",
+];
+const TEAM_NAMES = [
+  "मधु सिंह",
+  "बेबी दास",
+  "श्यामाकान्त सिंह",
+  "सुरेन्द्र सिंह",
+  "मनोज शुक्ला",
+  "आशीष मिश्रा",
+];
+const GALLERY_IMAGES = [1, 4, 5, 6, 7, 8, 9];
+const PUJA_IMAGES = [21, 24, 25, 26, 37, 38];
+const GALLERY_SECTION_IMAGES = [
+  { src: "/assets/img/progress-bar/1.JPG", alt: "gallery-1" },
+  { src: "/assets/img/events/8.jpg", alt: "gallery-2" },
+  { src: "/assets/img/progress-bar/2.JPG", alt: "gallery-3" },
+];
 
 const Home = () => {
   return (
@@ -715,7 +739,9 @@ const Home = () => {
             <div className="row">
               <div className="col-12">
                 <div className="banner-text-box">
-                  <h3 className="banner-title">TADIYAN HANUMAN MANDIR 'TRUST'</h3>
+                  <h3 className="banner-title">
+                    TADIYAN HANUMAN MANDIR 'TRUST'
+                  </h3>
                   <p className="banner-description">
                     श्री टड़ियन हनुमान मन्दिर, ई-ब्लांक राजाजीपुरम लखनऊ, उत्तर
                     प्रदेश के अति प्राचीन मन्दिरों में से एक है। इसका इतिहास
@@ -740,6 +766,7 @@ const Home = () => {
                     src="/assets/img/44.jpg"
                     alt="about"
                     className="about-image"
+                    loading="lazy"
                   />
                   <div className="image-overlay"></div>
                 </div>
@@ -748,14 +775,16 @@ const Home = () => {
             <div className="col-lg-6">
               <div className="modern-content-box">
                 <div className="section-title mb-4">
-                  <h3 className="modern-title">TADIYAN HANUMAN MANDIR 'TRUST'</h3>
+                  <h3 className="modern-title">
+                    TADIYAN HANUMAN MANDIR 'TRUST'
+                  </h3>
                   <div className="title-underline"></div>
                 </div>
                 <div className="content-text">
                   <p className="modern-paragraph">
                     श्री टड़ियन हनुमान मन्दिर, ई-ब्लांक राजाजीपुरम लखनऊ, उत्तर
-                    प्रदेश के अति प्राचीन मन्दिरों में से एक है। इसका इतिहास विगत
-                    150 वर्षों से अधिक का है।
+                    प्रदेश के अति प्राचीन मन्दिरों में से एक है। इसका इतिहास
+                    विगत 150 वर्षों से अधिक का है।
                   </p>
                   <p className="modern-paragraph">
                     भक्तों का टड़ियन हनुमान जी के प्रति भक्ति प्रेम व असीमित
@@ -797,22 +826,7 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            {[
-              "उपाध्यक्ष",
-              "सचिव",
-              "कोषाध्यक्ष",
-              "संरक्षक",
-              "सलाहकार",
-              "सदस्य",
-            ].map((role, idx) => {
-              const names = [
-                "मधु सिंह",
-                "बेबी दास",
-                "श्यामाकान्त सिंह",
-                "सुरेन्द्र सिंह",
-                "मनोज शुक्ला",
-                "आशीष मिश्रा",
-              ];
+            {TEAM_ROLES.map((role, idx) => {
               return (
                 <div key={idx} className="col-lg-3 col-md-6 mb-4">
                   <div className="modern-volunteer-card">
@@ -821,14 +835,15 @@ const Home = () => {
                         src="/assets/img/banner/min.png"
                         alt="volunteers"
                         className="volunteer-image"
+                        loading="lazy"
                       />
                       <div className="volunteer-overlay"></div>
                     </div>
                     <div className="volunteer-content">
                       <div className="volunteer-info">
-                        <p className="volunteer-role">{role}</p>
+                        <p className="volunteer-role">{TEAM_ROLES[idx]}</p>
                         <h5 className="volunteer-name">
-                          <span>{names[idx]}</span>
+                          <span>{TEAM_NAMES[idx]}</span>
                         </h5>
                       </div>
                     </div>
@@ -849,30 +864,21 @@ const Home = () => {
             <div className="section-underline"></div>
           </div>
           <div className="row">
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="modern-gallery-item">
-                <div className="gallery-image-wrapper">
-                  <img src="/assets/img/progress-bar/1.JPG" alt="gallery" className="gallery-image" />
-                  <div className="gallery-overlay"></div>
+            {GALLERY_SECTION_IMAGES.map((img, idx) => (
+              <div key={idx} className="col-lg-4 col-md-6 mb-4">
+                <div className="modern-gallery-item">
+                  <div className="gallery-image-wrapper">
+                    <img
+                      src={img.src}
+                      alt={img.alt}
+                      className="gallery-image"
+                      loading="lazy"
+                    />
+                    <div className="gallery-overlay"></div>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="modern-gallery-item">
-                <div className="gallery-image-wrapper">
-                  <img src="/assets/img/events/8.jpg" alt="gallery" className="gallery-image" />
-                  <div className="gallery-overlay"></div>
-                </div>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-6 mb-4">
-              <div className="modern-gallery-item">
-                <div className="gallery-image-wrapper">
-                  <img src="/assets/img/progress-bar/2.JPG" alt="gallery" className="gallery-image" />
-                  <div className="gallery-overlay"></div>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -902,11 +908,11 @@ const Home = () => {
                   <Swiper
                     modules={[Navigation, Pagination, Autoplay]}
                     navigation={{
-                      nextEl: '.image-next',
-                      prevEl: '.image-prev',
+                      nextEl: ".image-next",
+                      prevEl: ".image-prev",
                     }}
                     pagination={{
-                      el: '.image-pagination',
+                      el: ".image-pagination",
                       clickable: true,
                     }}
                     autoplay={{
@@ -916,17 +922,18 @@ const Home = () => {
                     loop={true}
                     className="image-swiper"
                   >
-                    {[1, 4, 5, 6, 7, 8, 9].map((n) => (
+                    {GALLERY_IMAGES.map((n) => (
                       <SwiperSlide key={n}>
                         <div className="image-slide">
                           <img
                             src={`/assets/img/cta/${n}.JPG`}
-                            alt="volunteers"
+                            alt="gallery-slide"
+                            loading="lazy"
                           />
                         </div>
                       </SwiperSlide>
                     ))}
-                    
+
                     {/* Custom Navigation */}
                     <div className="image-prev">
                       <i className="fas fa-chevron-left"></i>
@@ -934,7 +941,7 @@ const Home = () => {
                     <div className="image-next">
                       <i className="fas fa-chevron-right"></i>
                     </div>
-                    
+
                     {/* Custom Pagination */}
                     <div className="image-pagination"></div>
                   </Swiper>
@@ -954,7 +961,7 @@ const Home = () => {
             <div className="section-underline"></div>
           </div>
           <div className="row">
-            {[21, 24, 25, 26, 37, 38].map((n) => (
+            {PUJA_IMAGES.map((n) => (
               <div key={n} className="col-lg-4 col-md-6 mb-4">
                 <div className="modern-puja-item">
                   <div className="puja-image-wrapper">
@@ -962,6 +969,7 @@ const Home = () => {
                       src={`/assets/img/events/${n}.jpg`}
                       alt="puja"
                       className="puja-image"
+                      loading="lazy"
                     />
                     <div className="puja-overlay"></div>
                   </div>
@@ -987,15 +995,17 @@ const Home = () => {
                 </div>
                 <h4 className="footer-title">दान</h4>
                 <div className="footer-content">
-                  <p style={{textAlign: 'center'}}>आपके दान से मंदिर की सेवा और विकास में मदद मिलती है।</p>
+                  <p style={{ textAlign: "center" }}>
+                    आपके दान से मंदिर की सेवा और विकास में मदद मिलती है।
+                  </p>
                 </div>
               </div>
             </div>
-            
+
             <div className="footer-separator d-none d-md-flex">
-              <span style={{fontSize:"40px"}}>🙏🏻</span>
+              <span style={{ fontSize: "40px" }}>🙏🏻</span>
             </div>
-            
+
             <div className="col-md-6 mb-4">
               <div className="footer-card">
                 <div className="footer-icon">
@@ -1004,9 +1014,16 @@ const Home = () => {
                 <h4 className="footer-title">HDFC BANK ACCOUNT DETAILS</h4>
                 <div className="footer-content">
                   <ul className="footer-list">
-                    <li><strong>ACCOUNT NAME:</strong> TADIYAN HANUMAN MANDIR 'TRUST'</li>
-                    <li><strong>ACCOUNT NUMBER:</strong> 50200067140281</li>
-                    <li><strong>IFSC CODE:</strong> HDFC0001136</li>
+                    <li>
+                      <strong>ACCOUNT NAME:</strong> TADIYAN HANUMAN MANDIR
+                      'TRUST'
+                    </li>
+                    <li>
+                      <strong>ACCOUNT NUMBER:</strong> 50200067140281
+                    </li>
+                    <li>
+                      <strong>IFSC CODE:</strong> HDFC0001136
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -1025,4 +1042,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default memo(Home);

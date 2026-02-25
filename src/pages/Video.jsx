@@ -1,21 +1,41 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback, memo } from "react";
+
+// Defined outside component to prevent recreation on every render
+const VIDEOS = [
+  {
+    title: "Varansi at Night",
+    url: "https://www.youtube.com/watch?v=sX2bYV6nSy4",
+  },
+  {
+    title: "Chaar Dhaam Yatra",
+    url: "https://www.youtube.com/watch?v=xJ3vatsNQDU",
+  },
+  {
+    title: "Mahashivratri Temple",
+    url: "https://www.youtube.com/watch?v=xJ3vatsNQDU",
+  },
+  {
+    title: "OM Mahashivratri",
+    url: "https://www.youtube.com/watch?v=xJ3vatsNQDU",
+  },
+];
 
 const Video = () => {
-    const [selectedVideo, setSelectedVideo] = useState(null);
-    
-    const openModal = (videoUrl) => {
-        const videoId = videoUrl.split('v=')[1];
-        setSelectedVideo(videoId);
-    };
-    
-    const closeModal = () => {
-        setSelectedVideo(null);
-    };
+  const [selectedVideo, setSelectedVideo] = useState(null);
 
-    return (
-        <>
-            <style>
-                {`
+  const openModal = useCallback((videoUrl) => {
+    const videoId = videoUrl.split("v=")[1];
+    setSelectedVideo(videoId);
+  }, []);
+
+  const closeModal = useCallback(() => {
+    setSelectedVideo(null);
+  }, []);
+
+  return (
+    <>
+      <style>
+        {`
                 /* Modern Banner Styles */
                 .modern-banner {
                     position: relative;
@@ -247,81 +267,84 @@ const Video = () => {
                     color: #ff6b35;
                 }
                 `}
-            </style>
+      </style>
 
-            {/* <!-- Banner Start --> */}
-            <div className="modern-banner">
-                <div className="banner-overlay"></div>
-                <div className="banner-content">
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="banner-text-box">
-                                    <h3 className="banner-title">वीडियो गैलरी</h3>
-                                    <p className="banner-description" style={{color:"#fff"}}>
-                                        श्री टड़ियन हनुमान मन्दिर के विशेष वीडियो। देखिए हमारे मन्दिर की आरती, भजन-कीर्तन, विशेष उत्सवों और धार्मिक कार्यक्रमों के वीडियो।
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      {/* <!-- Banner Start --> */}
+      <div className="modern-banner">
+        <div className="banner-overlay"></div>
+        <div className="banner-content">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <div className="banner-text-box">
+                  <h3 className="banner-title">वीडियो गैलरी</h3>
+                  <p className="banner-description" style={{ color: "#fff" }}>
+                    श्री टड़ियन हनुमान मन्दिर के विशेष वीडियो। देखिए हमारे
+                    मन्दिर की आरती, भजन-कीर्तन, विशेष उत्सवों और धार्मिक
+                    कार्यक्रमों के वीडियो।
+                  </p>
                 </div>
+              </div>
             </div>
-            {/* <!-- Banner End --> */}
+          </div>
+        </div>
+      </div>
+      {/* <!-- Banner End --> */}
 
-            {/* <!-- Video Section Start --> */}
-            <section className="modern-video-section">
-                <div className="container">
-                    <div className="video-header">
-                        <h2 className="video-title">वीडियो संग्रह</h2>
-                    </div>
-                    
-                    <div className="modern-video-grid">
-                        {[
-                            { title: 'Varansi at Night', url: 'https://www.youtube.com/watch?v=sX2bYV6nSy4' },
-                            { title: 'Chaar Dhaam Yatra', url: 'https://www.youtube.com/watch?v=xJ3vatsNQDU' },
-                            { title: 'Mahashivratri Temple', url: 'https://www.youtube.com/watch?v=xJ3vatsNQDU' },
-                            { title: 'OM Mahashivratri', url: 'https://www.youtube.com/watch?v=xJ3vatsNQDU' }
-                        ].map((v, i) => (
-                            <div key={i} className="modern-video-item">
-                                <div className="video-thumbnail">
-                                    <img src="/assets/img/mndir.png" alt="video" />
-                                    <button 
-                                        className="video-play-btn" 
-                                        onClick={() => openModal(v.url)}
-                                        style={{border: 'none', cursor: 'pointer'}}
-                                    >
-                                        <i className="fas fa-play"></i>
-                                    </button>
-                                </div>
-                                <div className="video-content">
-                                    <h6 className="video-title-text">{v.title}</h6>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+      {/* <!-- Video Section Start --> */}
+      <section className="modern-video-section">
+        <div className="container">
+          <div className="video-header">
+            <h2 className="video-title">वीडियो संग्रह</h2>
+          </div>
+
+          <div className="modern-video-grid">
+            {VIDEOS.map((v, i) => (
+              <div key={i} className="modern-video-item">
+                <div className="video-thumbnail">
+                  <img src="/assets/img/mndir.png" alt="video" loading="lazy" />
+                  <button
+                    className="video-play-btn"
+                    onClick={() => openModal(v.url)}
+                    style={{ border: "none", cursor: "pointer" }}
+                  >
+                    <i className="fas fa-play"></i>
+                  </button>
                 </div>
-            </section>
-            {/* <!-- Video Section End --> */}
-            
-            {/* Video Modal */}
-            <div className={`video-modal ${selectedVideo ? 'active' : ''}`} onClick={closeModal}>
-                <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
-                    <button className="video-modal-close" onClick={closeModal}>
-                        <i className="fas fa-times"></i>
-                    </button>
-                    {selectedVideo && (
-                        <iframe
-                            src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
-                            title="Video Player"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
-                    )}
+                <div className="video-content">
+                  <h6 className="video-title-text">{v.title}</h6>
                 </div>
-            </div>
-        </>
-    );
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* <!-- Video Section End --> */}
+
+      {/* Video Modal */}
+      <div
+        className={`video-modal ${selectedVideo ? "active" : ""}`}
+        onClick={closeModal}
+      >
+        <div
+          className="video-modal-content"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <button className="video-modal-close" onClick={closeModal}>
+            <i className="fas fa-times"></i>
+          </button>
+          {selectedVideo && (
+            <iframe
+              src={`https://www.youtube.com/embed/${selectedVideo}?autoplay=1`}
+              title="Video Player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          )}
+        </div>
+      </div>
+    </>
+  );
 };
 
-export default Video;
+export default memo(Video);

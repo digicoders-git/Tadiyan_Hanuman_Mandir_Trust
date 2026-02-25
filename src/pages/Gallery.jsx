@@ -1,17 +1,11 @@
-import React, { Fragment } from 'react';
+import React, { memo } from "react";
 
 const Gallery = () => {
-    return (
-        <Fragment>
-            <style>
-                {`
-                img {
-                    height: 400px;
-                }
-                #b {
-                    border: 5px solid red;
-                }
-                
+  return (
+    <>
+      <style>
+        {`
+
                 /* Modern Banner Styles */
                 .modern-banner {
                     position: relative;
@@ -182,71 +176,56 @@ const Gallery = () => {
                     font-size: 24px;
                 }
                 `}
-            </style>
+      </style>
 
-            {/* <!-- Banner Start --> */}
-            <div className="modern-banner">
-                <div className="banner-overlay"></div>
-                <div className="banner-content">
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="banner-text-box">
-                                    <h3 className="banner-title">पिक्चर गैलरी</h3>
-                                    <p className="banner-description" style={{color:"#fff"}}>
-                                        श्री टड़ियन हनुमान मन्दिर की खूबसूरत तस्वीरें। देखिए हमारे मन्दिर के विभिन्न उत्सवों, पूजा-अर्चना, आरती और विशेष अवसरों की यादगार तस्वीरें।
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      {/* <!-- Banner Start --> */}
+      <div className="modern-banner">
+        <div className="banner-overlay"></div>
+        <div className="banner-content">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <div className="banner-text-box">
+                  <h3 className="banner-title">पिक्चर गैलरी</h3>
+                  <p className="banner-description" style={{ color: "#fff" }}>
+                    श्री टड़ियन हनुमान मन्दिर की खूबसूरत तस्वीरें। देखिए हमारे
+                    मन्दिर के विभिन्न उत्सवों, पूजा-अर्चना, आरती और विशेष अवसरों
+                    की यादगार तस्वीरें।
+                  </p>
                 </div>
+              </div>
             </div>
-            {/* <!-- Banner End --> */}
+          </div>
+        </div>
+      </div>
+      {/* <!-- Banner End --> */}
 
-            {/* <!-- Gallery Start --> */}
-            <section className="modern-gallery-section">
-                <div className="container">
-                    <div className="gallery-header">
-                        <h2 className="gallery-title">मंदिर गैलरी</h2>
-                    </div>
-                    
-                    <div className="modern-gallery-grid">
-                        {[1, 2, 3].map(n => (
-                            <div key={n} className="modern-gallery-item">
-                                <div className="gallery-image-wrapper">
-                                    <img src={`/assets/img/events/${n}.jpg`} alt="gallery" className="gallery-image" />
-                                </div>
-                            </div>
-                        ))}
-                        {[4, 5, 6, 7, 8, 9, 10, 11, 12].map(n => (
-                            <div key={n} className="modern-gallery-item">
-                                <div className="gallery-image-wrapper">
-                                    <img src={`/assets/img/events/${n}.jpg`} alt="gallery" className="gallery-image" />
-                                </div>
-                            </div>
-                        ))}
-                        <div className="modern-gallery-item">
-                            <div className="gallery-image-wrapper">
-                                <img src="/assets/img/events/13.jpg" alt="gallery" className="gallery-image" />
-                            </div>
-                        </div>
-                        <div className="modern-gallery-item">
-                            <div className="gallery-image-wrapper">
-                                <img src="/assets/img/events/14.jpg" alt="gallery" className="gallery-image" />
-                            </div>
-                        </div>
-                        <div className="modern-gallery-item">
-                            <div className="gallery-image-wrapper">
-                                <img src="/assets/img/events/15.jpg" alt="gallery" className="gallery-image" />
-                            </div>
-                        </div>
-                    </div>
+      {/* <!-- Gallery Start --> */}
+      <section className="modern-gallery-section">
+        <div className="container">
+          <div className="gallery-header">
+            <h2 className="gallery-title">मंदिर गैलरी</h2>
+          </div>
+
+          <div className="modern-gallery-grid">
+            {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].map((n) => (
+              <div key={n} className="modern-gallery-item">
+                <div className="gallery-image-wrapper">
+                  <img
+                    src={`/assets/img/events/${n}.jpg`}
+                    alt={`gallery-${n}`}
+                    className="gallery-image"
+                    loading="lazy"
+                  />
                 </div>
-            </section>
-            {/* <!-- Gallery End --> */}
-        </Fragment>
-    );
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* <!-- Gallery End --> */}
+    </>
+  );
 };
 
-export default Gallery;
+export default memo(Gallery);

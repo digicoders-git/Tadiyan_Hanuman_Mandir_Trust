@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from "react";
 
 const Donation = () => {
-    return (
-        <>
-            <style>
-                {`
+  return (
+    <>
+      <style>
+        {`
                 /* Modern Banner Styles */
                 .modern-banner {
                     position: relative;
@@ -234,100 +234,164 @@ const Donation = () => {
                     margin-bottom: 15px;
                 }
                 `}
-            </style>
+      </style>
 
-            {/* <!-- Banner Start --> */}
-            <div className="modern-banner">
-                <div className="banner-overlay"></div>
-                <div className="banner-content">
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="banner-text-box">
-                                    <h3 className="banner-title">दान</h3>
-                                    <p className="banner-description" style={{color:"#fff"}}>
-                                        श्री टड़ियन हनुमान मन्दिर के सेवा कार्यों में योगदान दें। आपका दान मन्दिर की देखभाल, पूजा-अर्चना, और धार्मिक गतिविधियों में उपयोग होगा। आपका दान हनुमान जी का आशीर्वाद दिलाएगा।
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      {/* <!-- Banner Start --> */}
+      <div className="modern-banner">
+        <div className="banner-overlay"></div>
+        <div className="banner-content">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <div className="banner-text-box">
+                  <h3 className="banner-title">दान</h3>
+                  <p className="banner-description" style={{ color: "#fff" }}>
+                    श्री टड़ियन हनुमान मन्दिर के सेवा कार्यों में योगदान दें।
+                    आपका दान मन्दिर की देखभाल, पूजा-अर्चना, और धार्मिक
+                    गतिविधियों में उपयोग होगा। आपका दान हनुमान जी का आशीर्वाद
+                    दिलाएगा।
+                  </p>
                 </div>
+              </div>
             </div>
-            {/* <!-- Banner End --> */}
+          </div>
+        </div>
+      </div>
+      {/* <!-- Banner End --> */}
 
-            {/* <!-- Donation Section Start --> */}
-            <section className="modern-donation-section">
-                <div className="container">
-                    <div className="donation-header">
-                        <h2 className="donation-title">दान विवरण</h2>
-                    </div>
-                    
-                    <div className="row align-items-stretch">
-                        {/* QR Code Card */}
-                        <div className="col-lg-4 mb-4">
-                            <div className="modern-qr-card">
-                                <img src="/assets/img/baarcode2.jpeg" alt="QR Code" className="qr-image" />
-                                <h5 style={{color: '#333', fontWeight: '600', marginBottom: '10px'}}>तुरंत दान करें</h5>
-                                <p style={{color: '#666', fontSize: '0.9rem'}}>उपरोक्त QR कोड को स्कैन करें</p>
-                                <div className="payment-logos">
-                                    <img src="/assets/img/Google-Pay-Logo.png" alt="Google Pay" style={{ height: '40px' }} />
-                                    <img src="/assets/img/Paytm.svg.png.png" alt="Paytm" style={{ height: '15px' }} />
-                                    <img src="/assets/img/PhonePe-Logo.wine.png" alt="PhonePe" style={{ height: '50px' }} />
-                                    <img src="/assets/img/bhim.png" alt="BHIM" style={{ height: '25px' }} />
-                                </div>
-                            </div>
-                        </div>
-                        
-                        {/* Bank Details Card */}
-                        <div className="col-lg-4 mb-4">
-                            <div className="modern-bank-card">
-                                <h5 className="bank-title">HDFC BANK ACCOUNT DETAILS</h5>
-                                <div className="bank-details">
-                                    <div>
-                                        <div className="bank-label">ACCOUNT NAME</div>
-                                        <div className="bank-value">TADIYAN HANUMAN MANDIR TRUST</div>
-                                    </div>
-                                    <div>
-                                        <div className="bank-label">ACCOUNT NUMBER</div>
-                                        <div className="bank-value">50200067140281</div>
-                                    </div>
-                                    <div>
-                                        <div className="bank-label">IFSC CODE</div>
-                                        <div className="bank-value">HDFC0001136</div>
-                                    </div>
-                                    <div>
-                                        <div className="bank-label">BANK NAME</div>
-                                        <div className="bank-value">HDFC BANK</div>
-                                    </div>
-                                </div>
-                                <div style={{textAlign: 'center', marginTop: '20px', padding: '15px', background: 'linear-gradient(45deg, #ff6b35, #f7931e)', borderRadius: '10px', color: 'white', fontSize: '0.9rem', fontWeight: '600'}}>
-                                    सुरक्षित बैंक हस्तांतरण
-                                </div>
-                            </div>
-                        </div>
-                        
-                        {/* Temple Info Card */}
-                        <div className="col-lg-4 mb-4">
-                            <div className="modern-info-card">
-                                <h5 className="info-title">TADIYAN HANUMAN MANDIR TRUST</h5>
-                                <p className="info-text">
-                                    श्री टड़ियन हनुमान मन्दिर, ई-ब्लांक राजाजीपुरम लखनऊ, उत्तर प्रदेश के अति प्राचीन मन्दिरों में से एक है।
-                                </p>
-                                <p className="info-text">
-                                    इसका इतिहास विगत 150 वर्षों से अधिक का है। भक्तों का टड़ियन हनुमान जी के प्रति भक्ति प्रेम व असीमित विश्वास अतुलनीय है।
-                                </p>
-                                <div style={{textAlign: 'center', marginTop: '25px', padding: '12px', background: 'rgba(255,107,53,0.1)', borderRadius: '10px', color: '#ff6b35', fontSize: '0.9rem', fontWeight: '600'}}>
-                                    आपका दान हनुमान जी का आशीर्वाद
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      {/* <!-- Donation Section Start --> */}
+      <section className="modern-donation-section">
+        <div className="container">
+          <div className="donation-header">
+            <h2 className="donation-title">दान विवरण</h2>
+          </div>
+
+          <div className="row align-items-stretch">
+            {/* QR Code Card */}
+            <div className="col-lg-4 mb-4">
+              <div className="modern-qr-card">
+                <img
+                  src="/assets/img/baarcode2.jpeg"
+                  alt="QR Code"
+                  className="qr-image"
+                  loading="lazy"
+                />
+                <h5
+                  style={{
+                    color: "#333",
+                    fontWeight: "600",
+                    marginBottom: "10px",
+                  }}
+                >
+                  तुरंत दान करें
+                </h5>
+                <p style={{ color: "#666", fontSize: "0.9rem" }}>
+                  उपरोक्त QR कोड को स्कैन करें
+                </p>
+                <div className="payment-logos">
+                  <img
+                    src="/assets/img/Google-Pay-Logo.png"
+                    alt="Google Pay"
+                    style={{ height: "40px" }}
+                    loading="lazy"
+                  />
+                  <img
+                    src="/assets/img/Paytm.svg.png.png"
+                    alt="Paytm"
+                    style={{ height: "15px" }}
+                    loading="lazy"
+                  />
+                  <img
+                    src="/assets/img/PhonePe-Logo.wine.png"
+                    alt="PhonePe"
+                    style={{ height: "50px" }}
+                    loading="lazy"
+                  />
+                  <img
+                    src="/assets/img/bhim.png"
+                    alt="BHIM"
+                    style={{ height: "25px" }}
+                    loading="lazy"
+                  />
                 </div>
-            </section>
-            {/* <!-- Donation Section End --> */}
-        </>
-    );
+              </div>
+            </div>
+
+            {/* Bank Details Card */}
+            <div className="col-lg-4 mb-4">
+              <div className="modern-bank-card">
+                <h5 className="bank-title">HDFC BANK ACCOUNT DETAILS</h5>
+                <div className="bank-details">
+                  <div>
+                    <div className="bank-label">ACCOUNT NAME</div>
+                    <div className="bank-value">
+                      TADIYAN HANUMAN MANDIR TRUST
+                    </div>
+                  </div>
+                  <div>
+                    <div className="bank-label">ACCOUNT NUMBER</div>
+                    <div className="bank-value">50200067140281</div>
+                  </div>
+                  <div>
+                    <div className="bank-label">IFSC CODE</div>
+                    <div className="bank-value">HDFC0001136</div>
+                  </div>
+                  <div>
+                    <div className="bank-label">BANK NAME</div>
+                    <div className="bank-value">HDFC BANK</div>
+                  </div>
+                </div>
+                <div
+                  style={{
+                    textAlign: "center",
+                    marginTop: "20px",
+                    padding: "15px",
+                    background: "linear-gradient(45deg, #ff6b35, #f7931e)",
+                    borderRadius: "10px",
+                    color: "white",
+                    fontSize: "0.9rem",
+                    fontWeight: "600",
+                  }}
+                >
+                  सुरक्षित बैंक हस्तांतरण
+                </div>
+              </div>
+            </div>
+
+            {/* Temple Info Card */}
+            <div className="col-lg-4 mb-4">
+              <div className="modern-info-card">
+                <h5 className="info-title">TADIYAN HANUMAN MANDIR TRUST</h5>
+                <p className="info-text">
+                  श्री टड़ियन हनुमान मन्दिर, ई-ब्लांक राजाजीपुरम लखनऊ, उत्तर
+                  प्रदेश के अति प्राचीन मन्दिरों में से एक है।
+                </p>
+                <p className="info-text">
+                  इसका इतिहास विगत 150 वर्षों से अधिक का है। भक्तों का टड़ियन
+                  हनुमान जी के प्रति भक्ति प्रेम व असीमित विश्वास अतुलनीय है।
+                </p>
+                <div
+                  style={{
+                    textAlign: "center",
+                    marginTop: "25px",
+                    padding: "12px",
+                    background: "rgba(255,107,53,0.1)",
+                    borderRadius: "10px",
+                    color: "#ff6b35",
+                    fontSize: "0.9rem",
+                    fontWeight: "600",
+                  }}
+                >
+                  आपका दान हनुमान जी का आशीर्वाद
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- Donation Section End --> */}
+    </>
+  );
 };
 
-export default Donation;
+export default memo(Donation);

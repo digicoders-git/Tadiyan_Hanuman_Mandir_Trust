@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from "react";
 
 const About = () => {
-    return (
-        <>
-            <style>
-                {`
+  return (
+    <>
+      <style>
+        {`
                 #b {
                     border: 5px solid red;
                 }
@@ -366,124 +366,170 @@ const About = () => {
                     transform: scale(1.05);
                 }
                 `}
-            </style>
+      </style>
 
-            {/* <!-- Banner Start --> */}
-            <div className="modern-banner">
-                <div className="banner-overlay"></div>
-                <div className="banner-content">
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="banner-text-box">
-                                    <h3 className="banner-title">हमारे विषय में</h3>
-                                    <p className="banner-description">
-                                        श्री टड़ियन हनुमान मन्दिर का 150 वर्षों से अधिक पुराना गौरवशाली इतिहास। जानिए हमारे मन्दिर की परम्परा, महन्तों का विवरण और भक्तों के प्रति हमारी सेवा के बारे में।
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      {/* <!-- Banner Start --> */}
+      <div className="modern-banner">
+        <div className="banner-overlay"></div>
+        <div className="banner-content">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <div className="banner-text-box">
+                  <h3 className="banner-title">हमारे विषय में</h3>
+                  <p className="banner-description">
+                    श्री टड़ियन हनुमान मन्दिर का 150 वर्षों से अधिक पुराना
+                    गौरवशाली इतिहास। जानिए हमारे मन्दिर की परम्परा, महन्तों का
+                    विवरण और भक्तों के प्रति हमारी सेवा के बारे में।
+                  </p>
                 </div>
+              </div>
             </div>
-            {/* <!-- Banner End --> */}
+          </div>
+        </div>
+      </div>
+      {/* <!-- Banner End --> */}
 
-            {/* <!-- About Start --> */}
-            <section className="modern-about-section">
-                <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6 d-none d-lg-block">
-                            <div className="modern-image-grid">
-                                <div className="grid-column">
-                                    <div className="modern-image-item">
-                                        <img src="/assets/img/events/37.jpg" alt="hanuman1" />
-                                    </div>
-                                    <div className="modern-image-item">
-                                        <img src="/assets/img/events/38.jpg" alt="hanuman2" />
-                                    </div>
-                                </div>
-                                <div className="grid-column">
-                                    <div className="modern-image-item">
-                                        <img src="/assets/img/events/12.jpg" alt="hanuman3" />
-                                    </div>
-                                    <div className="modern-image-item">
-                                        <img src="/assets/img/events/13.jpg" alt="hanuman4" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="modern-content-box">
-                                <h4 className="modern-title">TADIYAN HANUMAN MANDIR 'TRUST'</h4>
-                                <p className="modern-paragraph">
-                                    श्री टड़ियन हनुमान मन्दिर, ई-ब्लांक राजाजीपुरम लखनऊ, उत्तर प्रदेश के अति प्राचीन मन्दिरों में से एक है। इसका इतिहास विगत 150 वर्षों से अधिक का है।
-                                </p>
-                                <p className="modern-paragraph">
-                                    भक्तों का टड़ियन हनुमान जी के प्रति भक्ति प्रेम व असीमित विश्वास अतुलनीय है।
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+      {/* <!-- About Start --> */}
+      <section className="modern-about-section">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6 d-none d-lg-block">
+              <div className="modern-image-grid">
+                <div className="grid-column">
+                  <div className="modern-image-item">
+                    <img
+                      src="/assets/img/events/37.jpg"
+                      alt="hanuman1"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="modern-image-item">
+                    <img
+                      src="/assets/img/events/38.jpg"
+                      alt="hanuman2"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
-            </section>
-            {/* <!-- About End --> */}
+                <div className="grid-column">
+                  <div className="modern-image-item">
+                    <img
+                      src="/assets/img/events/12.jpg"
+                      alt="hanuman3"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="modern-image-item">
+                    <img
+                      src="/assets/img/events/13.jpg"
+                      alt="hanuman4"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="modern-content-box">
+                <h4 className="modern-title">TADIYAN HANUMAN MANDIR 'TRUST'</h4>
+                <p className="modern-paragraph">
+                  श्री टड़ियन हनुमान मन्दिर, ई-ब्लांक राजाजीपुरम लखनऊ, उत्तर
+                  प्रदेश के अति प्राचीन मन्दिरों में से एक है। इसका इतिहास विगत
+                  150 वर्षों से अधिक का है।
+                </p>
+                <p className="modern-paragraph">
+                  भक्तों का टड़ियन हनुमान जी के प्रति भक्ति प्रेम व असीमित
+                  विश्वास अतुलनीय है।
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- About End --> */}
 
-            {/* <!-- History Start --> */}
-            <section className="modern-timeline-section">
-                <div className="container">
-                    <div className="timeline-header">
-                        <h2 className="timeline-title">टड़ियन हनुमान मन्दिर के पूर्व महन्तों का विवरण</h2>
-                        <p className="timeline-subtitle">वैष्णव संप्रदाय दिगम्बर अखाड़ा</p>
-                    </div>
-                    <div className="modern-timeline">
-                        {[
-                            { name: 'बाबा बालक दास', date: '1910 - 1956' },
-                            { name: 'बाबा राम खेलावन दास उर्फ दुलारे दास', date: '1956-1990', guru: 'बाबा बालक दास जी' },
-                            { name: 'महन्त छोटे दास उर्फ दहाउर सिंह', date: '1990-2021', guru: 'बाबा राम खेलावन दास जी' },
-                            { name: 'वर्तमान महन्ती महन्त रामाकान्त दास उर्फ सिंह', date: '12/12/2020' }
-                        ].map((node, i) => (
-                            <div key={i} className="timeline-item">
-                                <div className="timeline-icon">
-                                    <i className="fas fa-om"></i>
-                                </div>
-                                <div className="timeline-content">
-                                    <div className="timeline-date">{node.date}</div>
-                                    <h4 className="timeline-name">{node.name}</h4>
-                                    {node.guru && <p className="timeline-guru"><strong>गुरु:</strong> {node.guru}</p>}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+      {/* <!-- History Start --> */}
+      <section className="modern-timeline-section">
+        <div className="container">
+          <div className="timeline-header">
+            <h2 className="timeline-title">
+              टड़ियन हनुमान मन्दिर के पूर्व महन्तों का विवरण
+            </h2>
+            <p className="timeline-subtitle">वैष्णव संप्रदाय दिगम्बर अखाड़ा</p>
+          </div>
+          <div className="modern-timeline">
+            {[
+              { name: "बाबा बालक दास", date: "1910 - 1956" },
+              {
+                name: "बाबा राम खेलावन दास उर्फ दुलारे दास",
+                date: "1956-1990",
+                guru: "बाबा बालक दास जी",
+              },
+              {
+                name: "महन्त छोटे दास उर्फ दहाउर सिंह",
+                date: "1990-2021",
+                guru: "बाबा राम खेलावन दास जी",
+              },
+              {
+                name: "वर्तमान महन्ती महन्त रामाकान्त दास उर्फ सिंह",
+                date: "12/12/2020",
+              },
+            ].map((node, i) => (
+              <div key={i} className="timeline-item">
+                <div className="timeline-icon">
+                  <i className="fas fa-om"></i>
                 </div>
-            </section>
-            {/* <!-- History End --> */}
+                <div className="timeline-content">
+                  <div className="timeline-date">{node.date}</div>
+                  <h4 className="timeline-name">{node.name}</h4>
+                  {node.guru && (
+                    <p className="timeline-guru">
+                      <strong>गुरु:</strong> {node.guru}
+                    </p>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* <!-- History End --> */}
 
-            {/* <!-- About Start --> */}
-            <section className="modern-final-about-section">
-                <div className="container">
-                    <div className="row align-items-center">
-                        <div className="col-lg-6">
-                            <div className="modern-content-box">
-                                <h4 className="modern-title">TADIYAN HANUMAN MANDIR 'TRUST'</h4>
-                                <p className="modern-paragraph">
-                                    श्री टड़ियन हनुमान मन्दिर, ई-ब्लांक राजाजीपुरम लखनऊ, उत्तर प्रदेश के अति प्राचीन मन्दिरों में से एक है। इसका इतिहास विगत 150 वर्षों से अधिक का है।
-                                </p>
-                                <p className="modern-paragraph">
-                                    भक्तों का टड़ियन हनुमान जी के प्रति भक्ति प्रेम व असीमित विश्वास अतुलनीय है।
-                                </p>
-                            </div>
-                        </div>
-                        <div className="col-lg-6">
-                            <div className="modern-final-image-container">
-                                <img src="/assets/img/about.jpg" alt="about" className="final-about-image" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* <!-- About End --> */}
-        </>
-    );
+      {/* <!-- About Start --> */}
+      <section className="modern-final-about-section">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-6">
+              <div className="modern-content-box">
+                <h4 className="modern-title">TADIYAN HANUMAN MANDIR 'TRUST'</h4>
+                <p className="modern-paragraph">
+                  श्री टड़ियन हनुमान मन्दिर, ई-ब्लांक राजाजीपुरम लखनऊ, उत्तर
+                  प्रदेश के अति प्राचीन मन्दिरों में से एक है। इसका इतिहास विगत
+                  150 वर्षों से अधिक का है।
+                </p>
+                <p className="modern-paragraph">
+                  भक्तों का टड़ियन हनुमान जी के प्रति भक्ति प्रेम व असीमित
+                  विश्वास अतुलनीय है।
+                </p>
+              </div>
+            </div>
+            <div className="col-lg-6">
+              <div className="modern-final-image-container">
+                <img
+                  src="/assets/img/about.jpg"
+                  alt="about"
+                  className="final-about-image"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- About End --> */}
+    </>
+  );
 };
 
-export default About;
+export default memo(About);

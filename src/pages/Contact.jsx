@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { memo } from "react";
 
 const Contact = () => {
-    return (
-        <>
-            <style>
-                {`
+  return (
+    <>
+      <style>
+        {`
                 /* Modern Banner Styles */
                 .modern-banner {
                     position: relative;
@@ -187,151 +187,171 @@ const Contact = () => {
                     box-shadow: 0 12px 35px rgba(255,107,53,0.4);
                 }
                 `}
-            </style>
+      </style>
 
-            {/* <!-- Banner Start --> */}
-            <div className="modern-banner">
-                <div className="banner-overlay"></div>
-                <div className="banner-content">
-                    <div className="container-fluid">
-                        <div className="row">
-                            <div className="col-12">
-                                <div className="banner-text-box">
-                                    <h3 className="banner-title">सम्पर्क</h3>
-                                    <p className="banner-description" style={{color:"#fff"}}>
-                                        श्री टड़ियन हनुमान मन्दिर से जुड़ें। हमसे सम्पर्क करें, अपने सुझाव दें या मन्दिर की गतिविधियों के बारे में जानकारी प्राप्त करें। हम आपकी सेवा में हैं।
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      {/* <!-- Banner Start --> */}
+      <div className="modern-banner">
+        <div className="banner-overlay"></div>
+        <div className="banner-content">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col-12">
+                <div className="banner-text-box">
+                  <h3 className="banner-title">सम्पर्क</h3>
+                  <p className="banner-description" style={{ color: "#fff" }}>
+                    श्री टड़ियन हनुमान मन्दिर से जुड़ें। हमसे सम्पर्क करें, अपने
+                    सुझाव दें या मन्दिर की गतिविधियों के बारे में जानकारी
+                    प्राप्त करें। हम आपकी सेवा में हैं।
+                  </p>
                 </div>
+              </div>
             </div>
-            {/* <!-- Banner End --> */}
+          </div>
+        </div>
+      </div>
+      {/* <!-- Banner End --> */}
 
-            {/* <!-- Contact Section Start --> */}
-            <section className="modern-contact-section">
-                <div className="container">
-                    <div className="row align-items-center">
-                        {/* Contact Form - Left Side */}
-                        <div className="col-lg-6 mb-4 mb-lg-0">
-                            <div className="modern-contact-form">
-                                <div className="contact-form-header">
-                                    <h2 className="contact-form-title">हमसे सम्पर्क करें</h2>
-                                </div>
-                                
-                                <form className="mf_form_validate ajax_submit">
-                                    <div className="modern-form-group">
-                                        <i className="far fa-user"></i>
-                                        <input 
-                                            type="text" 
-                                            placeholder="पूरा नाम" 
-                                            className="modern-form-control" 
-                                            name="name" 
-                                        />
-                                    </div>
-                                    <div className="modern-form-group">
-                                        <i className="far fa-envelope"></i>
-                                        <input 
-                                            type="email" 
-                                            placeholder="ईमेल पता" 
-                                            className="modern-form-control" 
-                                            name="email" 
-                                        />
-                                    </div>
-                                    <div className="modern-form-group">
-                                        <i className="far fa-pencil"></i>
-                                        <input 
-                                            type="text" 
-                                            placeholder="विषय" 
-                                            className="modern-form-control" 
-                                            name="subject" 
-                                        />
-                                    </div>
-                                    <div className="modern-form-group">
-                                        <textarea 
-                                            name="message" 
-                                            placeholder="अपना संदेश लिखें" 
-                                            className="modern-form-control modern-textarea"
-                                        ></textarea>
-                                    </div>
-                                    <div className="text-center">
-                                        <button type="submit" className="modern-submit-btn">
-                                            संदेश भेजें
-                                        </button>
-                                        <div className="server_response w-100"></div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                        
-                        {/* Map - Right Side */}
-                        <div className="col-lg-6">
-                            <div className="modern-map-container">
-                                <iframe 
-                                    title="map"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.9181926884894!2d80.87612291501824!3d26.842554169569016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfe687609567d%3A0xc43307fee6a50e22!2sTadiyan%20Mandir%20Rd%2C%20Block%20E%2C%20Rajajipuram%2C%20Lucknow%2C%20Uttar%20Pradesh%20226017!5e0!3m2!1sen!2sin!4v1656747950052!5m2!1sen!2sin" 
-                                    allowFullScreen={true}
-                                ></iframe>
-                            </div>
-                        </div>
-                    </div>
+      {/* <!-- Contact Section Start --> */}
+      <section className="modern-contact-section">
+        <div className="container">
+          <div className="row align-items-center">
+            {/* Contact Form - Left Side */}
+            <div className="col-lg-6 mb-4 mb-lg-0">
+              <div className="modern-contact-form">
+                <div className="contact-form-header">
+                  <h2 className="contact-form-title">हमसे सम्पर्क करें</h2>
                 </div>
-            </section>
-            {/* <!-- Contact Section End --> */}
 
-            {/* <!-- Icons Start --> */}
-            <div className="section section-padding pt-0">
-                <div className="container">
-                    <div className="row">
-                        <div className="col-lg-4">
-                            <div className="sigma_icon-block text-center light icon-block-7">
-                                <i className="flaticon-email"></i>
-                                <div className="sigma_icon-block-content">
-                                    <span>Send Email <i className="far fa-arrow-right"></i> </span>
-                                    <h5> Email Address</h5>
-                                    <p><a href="mailto:hanumanmandir@gmail.com">hanumanmandir@gmail.com</a></p>
-                                    <p><a href="mailto:hanumanmandir@gmail.com">hanumanmandir@gmail.com</a></p>
-                                </div>
-                                <div className="icon-wrapper">
-                                    <i className="flaticon-email"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="sigma_icon-block text-center light icon-block-7">
-                                <i className="flaticon-call"></i>
-                                <div className="sigma_icon-block-content">
-                                    <span>Call Us Now <i className="far fa-arrow-right"></i> </span>
-                                    <h5> Phone Number </h5>
-                                    <p><a href="tel:+918176981584"> +91 8176981584</a></p>
-                                    <p><a href="tel:+918176981584"> +91 8176981584</a></p>
-                                </div>
-                                <div className="icon-wrapper">
-                                    <i className="flaticon-call"></i>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="col-lg-4">
-                            <div className="sigma_icon-block text-center light icon-block-7">
-                                <i className="flaticon-location"></i>
-                                <div className="sigma_icon-block-content">
-                                    <span>Find Us Here <i className="far fa-arrow-right"></i> </span>
-                                    <h5> Location </h5>
-                                    <p>ई-ब्लांक राजाजीपुरम लखनऊ</p>
-                                    <p>उत्तर प्रदेश </p>
-                                </div>
-                                <div className="icon-wrapper">
-                                    <i className="flaticon-location"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <form className="mf_form_validate ajax_submit">
+                  <div className="modern-form-group">
+                    <i className="far fa-user"></i>
+                    <input
+                      type="text"
+                      placeholder="पूरा नाम"
+                      className="modern-form-control"
+                      name="name"
+                    />
+                  </div>
+                  <div className="modern-form-group">
+                    <i className="far fa-envelope"></i>
+                    <input
+                      type="email"
+                      placeholder="ईमेल पता"
+                      className="modern-form-control"
+                      name="email"
+                    />
+                  </div>
+                  <div className="modern-form-group">
+                    <i className="far fa-pencil"></i>
+                    <input
+                      type="text"
+                      placeholder="विषय"
+                      className="modern-form-control"
+                      name="subject"
+                    />
+                  </div>
+                  <div className="modern-form-group">
+                    <textarea
+                      name="message"
+                      placeholder="अपना संदेश लिखें"
+                      className="modern-form-control modern-textarea"
+                    ></textarea>
+                  </div>
+                  <div className="text-center">
+                    <button type="submit" className="modern-submit-btn">
+                      संदेश भेजें
+                    </button>
+                    <div className="server_response w-100"></div>
+                  </div>
+                </form>
+              </div>
             </div>
-            {/* <!-- Icons End --> */}
-        </>
-    );
+
+            {/* Map - Right Side */}
+            <div className="col-lg-6">
+              <div className="modern-map-container">
+                <iframe
+                  title="map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.9181926884894!2d80.87612291501824!3d26.842554169569016!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfe687609567d%3A0xc43307fee6a50e22!2sTadiyan%20Mandir%20Rd%2C%20Block%20E%2C%20Rajajipuram%2C%20Lucknow%2C%20Uttar%20Pradesh%20226017!5e0!3m2!1sen!2sin!4v1656747950052!5m2!1sen!2sin"
+                  allowFullScreen={true}
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- Contact Section End --> */}
+
+      {/* <!-- Icons Start --> */}
+      <div className="section section-padding pt-0">
+        <div className="container">
+          <div className="row">
+            <div className="col-lg-4">
+              <div className="sigma_icon-block text-center light icon-block-7">
+                <i className="flaticon-email"></i>
+                <div className="sigma_icon-block-content">
+                  <span>
+                    Send Email <i className="far fa-arrow-right"></i>{" "}
+                  </span>
+                  <h5> Email Address</h5>
+                  <p>
+                    <a href="mailto:hanumanmandir@gmail.com">
+                      hanumanmandir@gmail.com
+                    </a>
+                  </p>
+                  <p>
+                    <a href="mailto:hanumanmandir@gmail.com">
+                      hanumanmandir@gmail.com
+                    </a>
+                  </p>
+                </div>
+                <div className="icon-wrapper">
+                  <i className="flaticon-email"></i>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="sigma_icon-block text-center light icon-block-7">
+                <i className="flaticon-call"></i>
+                <div className="sigma_icon-block-content">
+                  <span>
+                    Call Us Now <i className="far fa-arrow-right"></i>{" "}
+                  </span>
+                  <h5> Phone Number </h5>
+                  <p>
+                    <a href="tel:+918176981584"> +91 8176981584</a>
+                  </p>
+                  <p>
+                    <a href="tel:+918176981584"> +91 8176981584</a>
+                  </p>
+                </div>
+                <div className="icon-wrapper">
+                  <i className="flaticon-call"></i>
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-4">
+              <div className="sigma_icon-block text-center light icon-block-7">
+                <i className="flaticon-location"></i>
+                <div className="sigma_icon-block-content">
+                  <span>
+                    Find Us Here <i className="far fa-arrow-right"></i>{" "}
+                  </span>
+                  <h5> Location </h5>
+                  <p>ई-ब्लांक राजाजीपुरम लखनऊ</p>
+                  <p>उत्तर प्रदेश </p>
+                </div>
+                <div className="icon-wrapper">
+                  <i className="flaticon-location"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <!-- Icons End --> */}
+    </>
+  );
 };
 
-export default Contact;
+export default memo(Contact);
