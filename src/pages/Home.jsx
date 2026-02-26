@@ -640,6 +640,182 @@ const Home = () => {
                     justify-content: center;
                 }
                 
+                /* Shivrameshwaram Section Styles */
+                .shivrameshwaram-section {
+                    padding: 80px 0;
+                    background: linear-gradient(135deg, #fff8f0 0%, #fff3e6 50%, #fff8f0 100%);
+                    position: relative;
+                    overflow: hidden;
+                }
+
+                .shivrameshwaram-section::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    height: 4px;
+                    background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
+                }
+
+                .shivrameshwaram-section::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    height: 4px;
+                    background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
+                }
+
+                .shivrameshwaram-image-container {
+                    position: relative;
+                    border-radius: 20px;
+                    overflow: hidden;
+                    box-shadow: 0 25px 60px rgba(255, 107, 53, 0.25);
+                    transition: all 0.4s ease;
+                }
+
+                .shivrameshwaram-image-container::before {
+                    content: '';
+                    position: absolute;
+                    top: -5px;
+                    left: -5px;
+                    right: -5px;
+                    bottom: -5px;
+                    background: linear-gradient(45deg, #ff6b35, #f7931e, #ff6b35);
+                    border-radius: 25px;
+                    z-index: -1;
+                    opacity: 0.6;
+                }
+
+                .shivrameshwaram-image-container:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 35px 80px rgba(255, 107, 53, 0.35);
+                }
+
+                .shivrameshwaram-main-image {
+                    width: 100%;
+                    height: 520px;
+                    object-fit: cover;
+                    display: block;
+                    border-radius: 20px;
+                    transition: transform 0.4s ease;
+                }
+
+                .shivrameshwaram-image-container:hover .shivrameshwaram-main-image {
+                    transform: scale(1.03);
+                }
+
+                .shivrameshwaram-badge {
+                    position: absolute;
+                    bottom: 20px;
+                    left: 20px;
+                    background: linear-gradient(45deg, #ff6b35, #f7931e);
+                    color: white;
+                    padding: 10px 20px;
+                    border-radius: 30px;
+                    font-size: 0.9rem;
+                    font-weight: 600;
+                    box-shadow: 0 5px 20px rgba(255, 107, 53, 0.5);
+                    letter-spacing: 0.5px;
+                }
+
+                .shivrameshwaram-content-box {
+                    padding: 0 10px 0 30px;
+                }
+
+                .shivrameshwaram-tag {
+                    display: inline-block;
+                    background: linear-gradient(45deg, #ff6b35, #f7931e);
+                    color: white;
+                    padding: 6px 18px;
+                    border-radius: 20px;
+                    font-size: 0.85rem;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    margin-bottom: 15px;
+                    text-transform: uppercase;
+                }
+
+                .shivrameshwaram-title {
+                    font-size: 2.2rem;
+                    font-weight: 800;
+                    color: #2d1b00;
+                    margin-bottom: 8px;
+                    line-height: 1.2;
+                }
+
+                .shivrameshwaram-subtitle {
+                    font-size: 1.1rem;
+                    color: #ff6b35;
+                    font-weight: 600;
+                    margin-bottom: 20px;
+                    font-style: italic;
+                }
+
+                .shivrameshwaram-divider {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                    margin-bottom: 25px;
+                }
+
+                .shivrameshwaram-divider span {
+                    font-size: 1.4rem;
+                }
+
+                .shivrameshwaram-divider-line {
+                    flex: 1;
+                    height: 2px;
+                    background: linear-gradient(90deg, #ff6b35, transparent);
+                    border-radius: 2px;
+                }
+
+                .shivrameshwaram-para {
+                    font-size: 1rem;
+                    line-height: 1.9;
+                    color: #4a3000;
+                    margin-bottom: 16px;
+                    text-align: justify;
+                    padding-left: 18px;
+                    border-left: 3px solid transparent;
+                    transition: border-color 0.3s ease;
+                }
+
+                .shivrameshwaram-para:hover {
+                    border-left-color: #ff6b35;
+                    padding-left: 22px;
+                }
+
+                .shivrameshwaram-para:last-child {
+                    margin-bottom: 0;
+                }
+
+                .shivrameshwaram-emoji-line {
+                    font-size: 1.1rem;
+                    color: #ff6b35;
+                    font-weight: 600;
+                    text-align: center;
+                    margin-top: 20px;
+                    padding: 12px;
+                    background: linear-gradient(45deg, rgba(255,107,53,0.08), rgba(247,147,30,0.08));
+                    border-radius: 10px;
+                    border: 1px solid rgba(255,107,53,0.2);
+                }
+
+                @media (max-width: 991px) {
+                    .shivrameshwaram-image-container {
+                        margin-bottom: 40px;
+                    }
+                    .shivrameshwaram-content-box {
+                        padding: 0;
+                    }
+                    .shivrameshwaram-main-image {
+                        height: 380px;
+                    }
+                }
+
                 /* Modern Footer Section Styles */
                 .modern-footer-section {
                 margin-top : -55px;
@@ -797,6 +973,69 @@ const Home = () => {
         </div>
       </section>
       {/* <!-- About End --> */}
+
+      {/* <!-- Shivrameshwaram Devalay Section Start --> */}
+      <section className="shivrameshwaram-section">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-lg-5 mb-4 mb-lg-0">
+              <div className="shivrameshwaram-image-container">
+                <img
+                  src="/assets/home/img1.png"
+                  alt="Shivrameshwaram Devalay"
+                  className="shivrameshwaram-main-image"
+                  loading="lazy"
+                />
+                <div className="shivrameshwaram-badge">
+                  🕉️ भारत का प्रथम द्वादश ज्योतिर्लिंग मंदिर
+                </div>
+              </div>
+            </div>
+            <div className="col-lg-7">
+              <div className="shivrameshwaram-content-box">
+                <span className="shivrameshwaram-tag">✨ दिव्य धाम</span>
+                <h2 className="shivrameshwaram-title">शिवरामेश्वरम देवालय</h2>
+                <p className="shivrameshwaram-subtitle">
+                  Shivrameshwaram Devalay
+                </p>
+                <div className="shivrameshwaram-divider">
+                  <span>🔱</span>
+                  <div className="shivrameshwaram-divider-line"></div>
+                  <span>🙏</span>
+                </div>
+                <p className="shivrameshwaram-para">
+                  भारत की पावन भूमि पर स्थित शिवरामेश्वरम देवालय एक ऐसा अलौकिक
+                  और अद्वितीय मंदिर है, जिसे भारत का प्रथम द्वादश ज्योतिर्लिंग
+                  मंदिर माना जाता है। यहाँ सभी द्वादश ज्योतिर्लिंग विशाल
+                  नर्मदेश्वर पत्थरों से निर्मित होकर अपने वास्तविक स्वरूप में
+                  विराजमान हैं, जो भक्तों को एक साथ द्वादश ज्योतिर्लिंग के दर्शन
+                  का दिव्य सौभाग्य प्रदान करते हैं।
+                </p>
+                <p className="shivrameshwaram-para">
+                  इस देवालय की सबसे विशेष और आध्यात्मिक विशेषता यह है कि
+                  प्रत्येक ज्योतिर्लिंग के नीचे संबंधित ज्योतिर्लिंग धाम की
+                  पवित्र मिट्टी और जल को विधिपूर्वक स्थापित किया गया है। जैसे
+                  काशी विश्वनाथ के ज्योतिर्लिंग के नीचे काशी धाम की पावन मिट्टी
+                  और जल स्थापित है, उसी प्रकार सभी द्वादश ज्योतिर्लिंगों के नीचे
+                  उनके मूल धामों का जल और मिट्टी श्रद्धापूर्वक विराजित किए गए
+                  हैं।
+                </p>
+                <p className="shivrameshwaram-para">
+                  देवालय के मध्य स्थित मुख्य शिवलिंग में बारहों ज्योतिर्लिंगों
+                  की पवित्र मिट्टी और जल को सम्मिलित कर दिव्य रूप से प्रतिष्ठित
+                  किया गया है। साथ ही, भगवान शंकर के परम उपासक भगवान श्रीराम भी
+                  उनके सम्मुख स्थापित हैं, जो भक्ति, समर्पण और धर्म की अखंड
+                  परंपरा का प्रतीक हैं।
+                </p>
+                <div className="shivrameshwaram-emoji-line">
+                  यह स्थान श्रद्धा, भक्ति और शिवत्व का अद्वितीय संगम है 🙏✨
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {/* <!-- Shivrameshwaram Devalay Section End --> */}
 
       {/* <!-- volunteers Start --> */}
       <section className="modern-volunteers-section">
