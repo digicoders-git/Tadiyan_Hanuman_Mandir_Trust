@@ -25,7 +25,7 @@ const Gallery = () => {
         images: [],
       },
       trust: {
-        title: "टड़ियन हनुमान मंदिर “ट्रस्ट”",
+        title: "प्रसादम",
         content: `टड़ियन हनुमान मंदिर “ट्रस्ट” की द्वारा प्रभु के भोग हेतु प्रतिदिन शुद्ध एवं सात्विक प्रसाद की विशेष व्यवस्था की जाती है। इस ट्रस्ट का मुख्य संकल्प यही है कि सभी भक्तों को पूर्ण रूप से स्वच्छ, पवित्र और शुद्ध प्रसाद प्राप्त हो।<br/><br/>
 हमारे प्रत्येक सेवक (वर्कर) प्रसाद निर्माण के समय शुद्धता का विशेष ध्यान रखते हैं — हाथों में ग्लव्स, सिर पर कैप तथा ट्रस्ट की निर्धारित प्रसादन टी-शर्ट पहनकर वे पूरी श्रद्धा और स्वच्छता के साथ प्रभु की सेवा में प्रसाद तैयार करते हैं।
 यह प्रसाद प्रतिदिन भगवान के भोग में अर्पित किया जाता है और तत्पश्चात भक्तों में वितरित किया जाता है, ताकि सभी श्रद्धालु शुद्ध, पावन और दिव्य प्रसाद का लाभ प्राप्त कर सकें।<br/><br/>
@@ -150,6 +150,7 @@ const Gallery = () => {
                 .gallery-section {
                     padding: 100px 0;
                     background: #fbfbfd;
+                    transition: padding 0.3s ease;
                 }
 
                 .section-header {
@@ -191,22 +192,6 @@ const Gallery = () => {
                     text-align: center;
                 }
 
-                @media (max-width: 576px) {
-                    .tab-navigation {
-                        width: 100%;
-                        border-radius: 15px;
-                        padding: 6px;
-                    }
-                    .tab-btn {
-                        flex: 1 1 calc(50% - 8px);
-                        padding: 10px 12px;
-                        font-size: 0.85rem;
-                    }
-                    /* If there's an odd number of items, the last one can take full width */
-                    .tab-btn:last-child:nth-child(odd) {
-                        flex: 1 1 100%;
-                    }
-                }
 
                 .tab-btn:hover {
                     color: #ff6b35;
@@ -427,6 +412,64 @@ const Gallery = () => {
                 }
 
                 @media (max-width: 576px) {
+                    .modern-banner {
+                        height: 40vh;
+                    }
+                    .banner-title {
+                        font-size: 1.8rem;
+                        margin-bottom: 10px;
+                    }
+                    .banner-description {
+                        font-size: 0.9rem;
+                    }
+                    .banner-text-box {
+                        padding: 20px;
+                        text-align: left;
+                    }
+                    .gallery-section {
+                        padding-top: 20px;
+                        padding-bottom: 60px;
+                    }
+                    .tab-nav-wrapper {
+                        margin-bottom: 25px;
+                    }
+                    .tab-navigation {
+                        width: 100%;
+                        border-radius: 12px;
+                        padding: 4px;
+                        flex-wrap: nowrap;
+                        gap: 4px;
+                        overflow-x: auto;
+                        scrollbar-width: none;
+                    }
+                    .tab-navigation::-webkit-scrollbar {
+                        display: none;
+                    }
+                    .tab-btn {
+                        flex: 1 1 0;
+                        padding: 10px 5px;
+                        font-size: 0.5rem;
+                        white-space: nowrap;
+                        min-width: 0;
+                    }
+                    .premium-content-card {
+                        padding: 30px 20px;
+                        border-radius: 16px;
+                        margin-bottom: 30px;
+                    }
+                    .content-header {
+                        justify-content: flex-start;
+                        gap: 10px;
+                        text-align: left;
+                    }
+                    .content-header h2 {
+                        font-size: 1.6rem;
+                        text-align: left;
+                    }
+                    .content-body {
+                        text-align: left;
+                        font-size: 1rem;
+                    }
                     .lightbox-image-container {
                         max-width: 95vw;
                     }
